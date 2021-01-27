@@ -27,7 +27,11 @@ def find_document(collection, elements, multiple=False):
     else:
         return collection.find_one(elements)
 
-@app.route("/api/questionnaries/get_questionnary", methods=["GET"])
+@app.route("/test_page", methods=["GET"])
+def test_page():
+    return 'It works, nakonets-to'
+
+@app.route("/get_questionnary", methods=["GET"])
 def get_questionnary():
     if not "questionnary_name" in request.args:
         return {"Error": "not questionnary_name argument!"}
@@ -42,7 +46,7 @@ def get_questionnary():
         return {"response": questionnary}
 
 
-@app.route("/api/qustionnaries/dump_qustionnary_answers", methods=["POST"])
+@app.route("/dump_qustionnary_answers", methods=["POST"])
 def dump_qustionnary_answers():
     answers = request.json
     if answers is None:
