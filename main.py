@@ -9,7 +9,7 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 
-client = MongoClient('mongodb://root:example@127.0.0.1:27017')
+client = MongoClient('mongodb://root:example@mongo:27017')
 
 db = client['testDB']
 
